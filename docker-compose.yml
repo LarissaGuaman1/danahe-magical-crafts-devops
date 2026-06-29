@@ -1,0 +1,6 @@
+services:
+  danahecrafts:
+    build: .
+    container_name: danahecrafts
+    ports:
+      - "5000:5000"
