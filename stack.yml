@@ -17,7 +17,7 @@ services:
 
         # HTTP
         - "traefik.http.routers.danahecrafts.rule=Host(`larissa.byronrm.com`)"
-        - "traefik.http.routers.danahecrafts.entrypoints=http"
+        - "traefik.http.routers.danahecrafts.entrypoints=web"
         - "traefik.http.routers.danahecrafts.middlewares=danahecrafts-https-redirect"
 
         # Redirección a HTTPS
@@ -25,9 +25,9 @@ services:
 
         # HTTPS
         - "traefik.http.routers.danahecrafts-secure.rule=Host(`larissa.byronrm.com`)"
-        - "traefik.http.routers.danahecrafts-secure.entrypoints=https"
+        - "traefik.http.routers.danahecrafts-secure.entrypoints=websecure"
         - "traefik.http.routers.danahecrafts-secure.tls=true"
-        - "traefik.http.routers.danahecrafts-secure.tls.certresolver=http"
+        - "traefik.http.routers.danahecrafts-secure.tls.certresolver=letsencrypt"
         - "traefik.http.routers.danahecrafts-secure.service=danahecrafts"
 
         # Puerto interno de Flask

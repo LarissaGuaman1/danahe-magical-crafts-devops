@@ -68,7 +68,7 @@ jobs:
             cd /home/${{ secrets.VPS_USER }}/danahecrafts
 
             echo "==> Iniciando sesión en GHCR"
-            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            echo "${{ secrets.GHCR_LDGS }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
             echo "==> Descargando la imagen desde GHCR"
             docker pull ghcr.io/larissaguaman1/danahe-magical-crafts:1.0.0
