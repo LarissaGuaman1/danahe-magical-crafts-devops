@@ -26,7 +26,9 @@ services:
         # HTTPS
         - "traefik.http.routers.danahecrafts-secure.rule=Host(`larissa.byronrm.com`)"
         - "traefik.http.routers.danahecrafts-secure.entrypoints=https"
-        - "traefik.http.routers.danahecrafts-secure.tls=true"
+        # Redirección a HTTPS
+        - "traefik.http.middlewares.danahecrafts-https-redirect.redirectscheme.scheme=https"
+        - "traefik.http.middlewares.danahecrafts-https-redirect.redirectscheme.permanent=true"
         - "traefik.http.routers.danahecrafts-secure.tls.certresolver=http"
         - "traefik.http.routers.danahecrafts-secure.service=danahecrafts"
 
